@@ -27,22 +27,40 @@
 
   body {
     font-family: 'Noto Sans JP', sans-serif;
-    background: #F8FBFF;
+    background: #E8F0FA;
     color: var(--text-dark);
     overflow-x: hidden;
     line-height: 1.7;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* PC表示：中央寄せ・最大幅制限 */
+  .page-wrapper {
+    max-width: 480px;
+    margin: 0 auto;
+    background: #F8FBFF;
+    position: relative;
+    box-shadow: 0 0 60px rgba(0,0,0,0.1);
+    min-height: 100vh;
+    overflow-x: hidden;
   }
 
   /* ===== STICKY CTA BAR ===== */
   .sticky-bar {
     position: fixed;
-    bottom: 0; left: 0; right: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 480px;
     background: rgba(255,255,255,0.96);
     backdrop-filter: blur(8px);
     padding: 10px 16px;
     z-index: 999;
     box-shadow: 0 -2px 16px rgba(26,111,212,0.15);
     border-top: 1.5px solid var(--blue-pale);
+    box-sizing: border-box;
   }
   .sticky-bar a {
     display: block;
@@ -2117,5 +2135,6 @@
   updateTimer();
   setInterval(updateTimer, 1000);
 </script>
+</div><!-- /.page-wrapper -->
 </body>
 </html>
